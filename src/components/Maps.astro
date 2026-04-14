@@ -1,0 +1,108 @@
+---
+---
+
+<section id="maps" aria-label="Location map">
+  <div class="maps-header">
+    <span class="eyebrow">Our Location</span>
+    <h2 class="headline">
+      Find Us<br /><em>in Pembroke Pines</em>
+    </h2>
+  </div>
+
+  <div class="map-frame" id="map-frame">
+    <div class="map-overlay" id="map-overlay" aria-hidden="true"></div>
+    <iframe
+      src="https://maps.google.com/maps?q=1198+SW+158+Way,+Pembroke+Pines,+FL+33027&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="dobleAArealstate — 1198 SW 158th Way, Pembroke Pines FL"
+    ></iframe>
+  </div>
+
+  <div class="map-address">
+    1198 SW 158th Way &mdash; Pembroke Pines, FL 33027
+  </div>
+</section>
+
+<style>
+  #maps {
+    border-top: 1px solid var(--color-border);
+    padding-top: 7rem;
+  }
+
+  .maps-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 3.5rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 1.1rem;
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+
+  .headline em {
+    color: var(--color-gold);
+    font-style: italic;
+  }
+
+  .map-frame {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    filter: grayscale(0.25) brightness(0.8) contrast(1.05);
+  }
+
+  .map-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: default;
+  }
+
+  .map-frame.is-active .map-overlay {
+    display: none;
+  }
+
+  .map-address {
+    padding: 1.1rem 2rem;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--color-muted);
+    letter-spacing: 0.06em;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 640px) {
+    #maps { padding-top: 5rem; }
+    .maps-header { padding: 0 1.25rem 2.5rem; }
+    .map-frame { height: 320px; }
+  }
+</style>
+
+<script>
+  document.getElementById('map-overlay')?.addEventListener('click', () => {
+    document.getElementById('map-frame')?.classList.add('is-active');
+  });
+</script>

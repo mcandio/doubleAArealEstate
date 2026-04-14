@@ -1,0 +1,118 @@
+---
+---
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="dobleAArealstate — home">
+      <span class="logo-mark">AA</span>
+      <span class="logo-text">dobleAArealstate</span>
+    </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <a href="#contact">Contact</a>
+      <a href="tel:+19544440818" class="phone-link">+1 954 444 0818</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.5rem 2rem;
+    transition: background 0.4s ease, border-color 0.4s ease;
+    border-bottom: 1px solid transparent;
+  }
+
+  #site-header.scrolled {
+    background: rgba(12, 12, 10, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom-color: var(--color-border);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .logo-mark {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    letter-spacing: 0.03em;
+    line-height: 1;
+  }
+
+  .logo-text {
+    font-size: 0.68rem;
+    font-weight: 300;
+    color: var(--color-muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+  }
+
+  .header-nav a {
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    transition: color 0.2s;
+  }
+
+  .header-nav a:hover {
+    color: var(--color-text);
+  }
+
+  .phone-link {
+    color: var(--color-gold) !important;
+    font-weight: 500 !important;
+    border: 1px solid var(--color-gold-dim);
+    padding: 0.45rem 1rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s !important;
+  }
+
+  .phone-link:hover {
+    background: var(--color-gold) !important;
+    color: var(--color-bg) !important;
+    border-color: var(--color-gold) !important;
+  }
+
+  @media (max-width: 640px) {
+    #site-header { padding: 1.1rem 1.25rem; }
+    .logo-text { display: none; }
+    .header-nav a:not(.phone-link) { display: none; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener(
+    'scroll',
+    () => {
+      header?.classList.toggle('scrolled', window.scrollY > 40);
+    },
+    { passive: true }
+  );
+</script>

@@ -1,0 +1,349 @@
+---
+---
+
+<section id="contact" aria-label="Contact">
+
+  <!-- LEFT — heading + form -->
+  <div class="contact-left">
+    <span class="eyebrow">Contact Us</span>
+    <h2 class="headline">Let's Talk<br /><em>Real Estate</em></h2>
+
+    <form id="contact-form" novalidate>
+      <!-- Honeypot -->
+      <input
+        type="text"
+        name="company"
+        tabindex="-1"
+        aria-hidden="true"
+        autocomplete="off"
+        style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"
+      />
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Enter your name" />
+        </div>
+        <div class="form-field">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="Enter your email" />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" required rows="4" placeholder="Enter your message"></textarea>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" id="cf-submit">
+          <span class="btn-label">Send Message</span>
+          <span class="btn-loading" aria-live="polite">Sending&hellip;</span>
+        </button>
+        <p class="form-note">
+          All fields are required. By sending the form you agree to our
+          <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a>.
+        </p>
+      </div>
+
+      <p id="cf-success" class="form-msg form-msg--success" role="alert" hidden>
+        Thank you — we'll be in touch soon.
+      </p>
+      <p id="cf-error" class="form-msg form-msg--error" role="alert" hidden>
+        Something went wrong. Please try again or call <a href="tel:+19544440818">+1 954 444 0818</a>.
+      </p>
+    </form>
+  </div>
+
+  <!-- RIGHT — two info cards + square map -->
+  <div class="contact-right">
+    <div class="info-cards">
+      <div class="info-card">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+        </svg>
+        <div>
+          <p class="info-label">Say Hello</p>
+          <a href="tel:+19544440818" class="info-value">+1 954 444 0818</a>
+        </div>
+      </div>
+      <div class="info-card">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+        </svg>
+        <div>
+          <p class="info-label">Location</p>
+          <p class="info-value">1198 SW 158th Way<br />Pembroke Pines, FL 33027</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <div class="map-overlay" id="map-overlay" aria-hidden="true"></div>
+      <iframe
+        src="https://maps.google.com/maps?q=1198+SW+158+Way,+Pembroke+Pines,+FL+33027&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="dobleAArealstate — 1198 SW 158th Way, Pembroke Pines FL"
+      ></iframe>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  #contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* ── Info cards (right column) ── */
+  .info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-card {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--color-border);
+    background: rgba(255,255,255,0.015);
+  }
+
+  .info-card svg { color: var(--color-gold); flex-shrink: 0; margin-top: 2px; }
+
+  .info-label {
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .info-value {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--color-text);
+    text-decoration: none;
+    line-height: 1.55;
+    display: block;
+  }
+
+  a.info-value:hover { color: var(--color-gold); }
+
+  /* ── LEFT ── */
+  .contact-left {
+    padding: 3.5rem 3rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .headline em { color: var(--color-gold); font-style: italic; }
+
+  /* Form */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  input, textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 0.65rem 0;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+    width: 100%;
+  }
+
+  input::placeholder, textarea::placeholder { color: #2e2d2b; }
+  input:focus, textarea:focus { border-bottom-color: var(--color-gold); }
+
+  .form-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  button[type='submit'] {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background: var(--color-gold);
+    color: var(--color-bg);
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.22s, transform 0.22s;
+  }
+
+  button[type='submit']:hover:not(:disabled) { background: #d4b47a; transform: translateY(-1px); }
+  button[type='submit']:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  .btn-loading { display: none; }
+  button[type='submit'].is-loading .btn-label { display: none; }
+  button[type='submit'].is-loading .btn-loading { display: inline; }
+
+  .form-note {
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: var(--color-muted);
+    line-height: 1.65;
+    max-width: 240px;
+  }
+
+  .form-note a { color: var(--color-muted); text-decoration: underline; text-underline-offset: 2px; }
+
+  .form-msg {
+    margin-top: 1.25rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .form-msg--success { border-left: 2px solid var(--color-gold); color: var(--color-gold); background: rgba(201,168,102,0.06); }
+  .form-msg--error   { border-left: 2px solid #b85c3c; color: #c4705a; background: rgba(196,112,90,0.06); }
+  .form-msg--error a { color: inherit; text-decoration: underline; }
+
+  /* ── RIGHT ── */
+  .contact-right {
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map-wrap {
+    position: relative;
+    flex: 1;
+    min-height: 180px;
+    overflow: hidden;
+    filter: grayscale(0.2) brightness(0.82) contrast(1.05);
+  }
+
+  .map-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: default;
+  }
+
+  .map-wrap.is-active .map-overlay { display: none; }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    #contact { grid-template-columns: 1fr; }
+    .contact-left, .contact-right { padding: 3rem 1.25rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+  }
+</style>
+
+<script>
+  document.getElementById('map-overlay')?.addEventListener('click', (e) => {
+    (e.currentTarget as HTMLElement).closest('.map-wrap')?.classList.add('is-active');
+  });
+
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('cf-submit') as HTMLButtonElement | null;
+  const successEl = document.getElementById('cf-success') as HTMLParagraphElement | null;
+  const errorEl   = document.getElementById('cf-error')   as HTMLParagraphElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const getValue = (name: string) =>
+      (form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement).value.trim();
+
+    const payload = {
+      name:    getValue('name'),
+      email:   getValue('email'),
+      message: getValue('message'),
+      company: getValue('company'),
+    };
+
+    if (!payload.name || !payload.email || !payload.message) return;
+
+    submitBtn!.disabled = true;
+    submitBtn!.classList.add('is-loading');
+    successEl!.hidden = true;
+    errorEl!.hidden   = true;
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      res.ok ? (successEl!.hidden = false, form.reset()) : (errorEl!.hidden = false);
+    } catch {
+      errorEl!.hidden = false;
+    } finally {
+      submitBtn!.disabled = false;
+      submitBtn!.classList.remove('is-loading');
+    }
+  });
+</script>

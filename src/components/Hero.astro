@@ -1,0 +1,206 @@
+---
+---
+
+<section id="hero" aria-label="Hero">
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-bg-mark" aria-hidden="true">AA</div>
+
+  <div class="hero-content">
+    <p class="eyebrow reveal-1">Pembroke Pines &middot; South Florida</p>
+
+    <h1 class="headline reveal-2">
+      <span class="headline-line">Your Perfect</span>
+      <span class="headline-line headline-accent">Home</span>
+      <span class="headline-line">Awaits.</span>
+    </h1>
+
+    <p class="subtext reveal-3">
+      Premium residential and commercial real estate<br class="br-desk" />
+      services tailored for South Florida buyers and sellers.
+    </p>
+
+    <div class="hero-actions reveal-4">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#cta" class="btn-ghost">Learn More</a>
+    </div>
+  </div>
+
+  <div class="scroll-line reveal-4" aria-hidden="true"><span></span></div>
+</section>
+
+<style>
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 25% 65%, #1c1408 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, #0e0d08 0%, transparent 50%),
+      var(--color-bg);
+  }
+
+  .hero-grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  .hero-bg-mark {
+    position: absolute;
+    right: -3rem;
+    bottom: -5rem;
+    font-family: var(--font-display);
+    font-size: clamp(14rem, 28vw, 30rem);
+    font-weight: 600;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(201, 168, 102, 0.055);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 9rem 2rem 7rem;
+    width: 100%;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 1.75rem;
+    opacity: 0;
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-size: clamp(3.75rem, 8.5vw, 8rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+    margin-bottom: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  }
+
+  .headline-line { display: block; }
+
+  .headline-accent {
+    color: var(--color-gold);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .subtext {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-muted);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    max-width: 480px;
+    opacity: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.9rem 2.5rem;
+    background: var(--color-gold);
+    color: var(--color-bg);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: background 0.22s, transform 0.22s;
+  }
+
+  .btn-primary:hover {
+    background: #d4b47a;
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.9rem 2.5rem;
+    border: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: border-color 0.22s, color 0.22s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-muted);
+    color: var(--color-text);
+  }
+
+  /* Scroll indicator */
+  .scroll-line {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  .scroll-line span {
+    display: block;
+    width: 1px;
+    height: 64px;
+    background: linear-gradient(to bottom, transparent, var(--color-gold-dim));
+    animation: scrollPulse 2.2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+    30%  { opacity: 1; }
+    50%  { transform: scaleY(1); transform-origin: top; }
+    51%  { transform: scaleY(1); transform-origin: bottom; }
+    80%  { opacity: 1; }
+    100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  }
+
+  /* Staggered reveal */
+  .reveal-1 { animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards; }
+  .reveal-2 { animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; }
+  .reveal-3 { animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards; }
+  .reveal-4 { animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards; }
+
+  @keyframes revealUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .br-desk { display: inline; }
+
+  @media (max-width: 640px) {
+    .hero-content { padding: 8rem 1.25rem 5rem; }
+    .hero-bg-mark { right: -1.5rem; font-size: 10rem; bottom: -2rem; }
+    .br-desk { display: none; }
+  }
+</style>
